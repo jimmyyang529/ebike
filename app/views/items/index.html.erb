@@ -1,0 +1,24 @@
+
+<div class="home-banner clearfix">
+  <h1>Bike Your Life</h1>
+  <%= image_tag ("home_banner_1.jpg") %>
+</div>
+
+<%= form_tag bulk_compare_items_path do %>
+
+  <% @items.each do |item| %>
+    <div class="itemlist">
+      <%= link_to item_path(item) do %>
+        <p><%= item.name %></p>
+        <p><%= image_tag(item.img_url) %></p>
+      <% end %>
+    <div class="compare_box">
+      <p><%= check_box_tag(item.category_id) %></p>
+    </div>
+
+    <%= link_to "Buy it", item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %></p>
+</div>
+
+<% end %>
+
+<% end %>

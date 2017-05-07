@@ -1,0 +1,48 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.clearfix:after {
+	content:"";
+	display: table;
+	clear: both;
+}
+
+
+
+
+.home-banner img{
+  float: left;
+  z-index:-999;
+  background-size: cover;
+  max-width:100%;
+}
+
+.home-banner h1{
+  position: absolute;
+  text-shadow: 0.1em 0.1em 0.2em black;
+  font-size: 160px;
+  color: #FFFFFF;
+  margin-top:100px;
+  margin-left: 450px;
+}
+
+.itemlist {
+  float:left;
+  margin-left:40px;
+  margin-top:20px;
+  padding:10px;
+  width:450px;
+  border: 1px solid;
+
+}
+
+.itemlist img{
+  width:450px;
+}
+
+.itemlist a{
+  text-decoration-line: none;
+  font-size: 20px;
+  text-align: center;
+
+}

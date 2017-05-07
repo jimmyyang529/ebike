@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  img_url: 
+  manufacture_year: 
+  Frame: 
+  Fork: 
+  size: 
+  color: 
+  price: 
+  description: 
+  brand_id: 
+  category_id: 
+  is_check: false
+
+two:
+  name: 
+  img_url: 
+  manufacture_year: 
+  Frame: 
+  Fork: 
+  size: 
+  color: 
+  price: 
+  description: 
+  brand_id: 
+  category_id: 
+  is_check: false
