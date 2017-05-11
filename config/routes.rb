@@ -7,7 +7,10 @@ root :to => "items#index"
 
 resource :cart
 
-resources :items do
+resources :items, only: [:index, :show] do
+  member do
+    post :add_to_cart
+  end
   collection do
     post :bulk_compare
     get :compare

@@ -4,6 +4,33 @@
   <%= image_tag ("home_banner_1.jpg") %>
 </div>
 
+<section id="my-cart">
+  <strong>你目前選購了 <%= current_cart.total_quantity %> 件商品,預計消費 <%= current_cart.total %> 元</strong>
+  <table>
+    <tr>
+      <th>商品</th>
+      <th>單價</th>
+      <th>數量</th>
+      <th>小計</th>
+    </tr>
+
+    <% current_cart.cart_items.each do |i| %>
+    <tr>
+      <td><%= i.item.name %></td>
+      <td><%= i.item.price %></td>
+      <td><%= i.quantity %></td>
+      <td><%= i.subtotal %></td>
+    </tr>
+    <% end %>
+  </table>
+  <%= link_to '我要結帳!', new_order_path, :class => "btn btn-primary" %>
+
+</section>
+
+
+
+
+
 <%= form_tag bulk_compare_items_path do %>
 
   <% @items.each do |item| %>
@@ -12,13 +39,14 @@
 
         <p><%= item.name %></p>
         <p><%= image_tag(item.img_url) %></p>
+
       <% end %>
 
       <div class="compare_box">
         <p><%= check_box_tag "ids[]", item.id, false %></p>
       </div>
 
-    <%= link_to "Buy it", new_order_path %></p>
+      <%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %>
 
   </div>
     <% end %>
