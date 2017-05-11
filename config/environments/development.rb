@@ -13,7 +13,10 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   #加入寄信時預設的網站網址：
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://localhost:3000' }
+
+  config.action_mailer.smtp_settings = config_for(:email).symbolize_keys
+
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -30,7 +33,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 

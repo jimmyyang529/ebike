@@ -10,9 +10,13 @@ class OrdersController < ApplicationController
 
   def create
     @order = current_user.orders.build(order_params)
-    @order.add_order_items(current_item)
+    @order.add_order_items(current_cart)
+    @order.amount = current_cart.total
+
     if @order.save
+      current_cart.destroy
       redirect_to root_path, notice:'已成立訂單!'
+      UserMailer.notify_order_create(@order).deliver_now!
     else
       render :new
     end
