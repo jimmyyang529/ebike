@@ -9,16 +9,19 @@
   <% @items.each do |item| %>
     <div class="itemlist">
       <%= link_to item_path(item) do %>
+
         <p><%= item.name %></p>
         <p><%= image_tag(item.img_url) %></p>
       <% end %>
-    <div class="compare_box">
-      <p><%= check_box_tag(item.category_id) %></p>
-    </div>
 
-    <%= link_to "Buy it", item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %></p>
-</div>
+      <div class="compare_box">
+        <p><%= check_box_tag "ids[]", item.id, false %></p>
+      </div>
 
-<% end %>
+    <%= link_to "Buy it", new_order_path %></p>
 
+  </div>
+    <% end %>
+
+  <%= submit_tag "Compare" %>
 <% end %>

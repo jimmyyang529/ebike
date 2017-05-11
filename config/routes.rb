@@ -5,11 +5,16 @@ Rails.application.routes.draw do
 
 root :to => "items#index"
 
+resource :cart
+
 resources :items do
   collection do
     post :bulk_compare
+    get :compare
   end
 end
+
+resources :orders
 
 namespace :admin do
   resources :items
