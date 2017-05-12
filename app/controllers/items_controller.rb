@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     current_cart.add_cart_item(@item)
     redirect_to root_path
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
 

@@ -1,1 +1,20 @@
-<%= render partial: "shared/order_list", locals: { order: @order} %>
+<h1>訂單編號 <%= @order.id %></h1>
+
+
+<p>付款方式: <%= t( @order.payment_method ) %></p>
+<p>Amount: <%= @order.amount %></p>
+
+<% @order.orderitem_ships.each do |i| %>
+  <li><%= i.item.name %> 數量<%= i.quantity %></li>
+<% end %>
+<hr>
+
+<% if @order.order_status == "new_order" %>
+
+<p>
+  <% Payment::PAYMENT_METHODS.each do |pm| %>
+    <%= link_to t(pm, :scope => "PaymentPay2go"), checkout_pay2go_order_path(@order, :payment_method => pm), :class => "btn btn-primary btn-lg", :method => :post %>
+  <% end %>
+</p>
+
+<% end %>

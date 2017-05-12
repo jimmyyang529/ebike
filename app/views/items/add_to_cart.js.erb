@@ -1,0 +1,16 @@
+$('.item_<%= @item.id %>.msg').html('已加入購物車!').css('color','red').css('font-size', '10px');
+$('#cart-total-qty').text("<%= current_cart.total_quantity %>");
+
+$('#cart-total').text("<%= current_cart.total %>");
+
+<% if @item.quantity == 1 %>
+
+$('#my-cart table').append('<%= j render partial: 'shared/item',locals: { item: @item } %>');
+
+<% else %>
+
+$('td.cart-<%= @item.id %>-qty').text("<%= @item.quantity%>");
+
+$('td.cart-<%= @item.id %>-subtotal').text("<%= @item.subtotal%>");
+
+<% end %>

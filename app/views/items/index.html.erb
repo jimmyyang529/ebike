@@ -1,12 +1,8 @@
-
-<div class="home-banner clearfix">
-  <h1>Bike Your Life</h1>
-  <%= image_tag ("home_banner_1.jpg") %>
-</div>
-
 <section id="my-cart">
+  <!-- #購物車資訊區的購物車商品總數量、購物車總金額 -->
   <strong>你目前選購了 <%= current_cart.total_quantity %> 件商品,預計消費 <%= current_cart.total %> 元</strong>
   <table>
+    <!-- 會變動的商品資訊 -->
     <tr>
       <th>商品</th>
       <th>單價</th>
@@ -15,6 +11,7 @@
     </tr>
 
     <% current_cart.cart_items.each do |i| %>
+
     <tr>
       <td><%= i.item.name %></td>
       <td><%= i.item.price %></td>
@@ -29,6 +26,11 @@
 
 
 
+
+<div class="home-banner clearfix">
+  <h1>Bike Your Life</h1>
+  <%= image_tag ("home_banner_1.jpg") %>
+</div>
 
 
 <%= form_tag bulk_compare_items_path do %>
