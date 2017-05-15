@@ -27,17 +27,20 @@
 }
 
 .itemlist {
-  float:left;
+	display: block;
+
   margin-left:40px;
   margin-top:20px;
   padding:10px;
-  width:450px;
-  border: 1px solid;
-
+  max-width:1080px;
+	height:400px;
 }
 
+
 .itemlist img{
-  width:450px;
+	float:left;
+	width:450px;
+
 }
 
 .itemlist a{

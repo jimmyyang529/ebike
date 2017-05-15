@@ -1,19 +1,13 @@
-<div class="table">
-  <%= items.each do |f| %>
-  <th>
-    <td>
+
+  <%= @items.each do |f| %>
+
       <%= f.name %>
-    </td>
-    <td>
+
       <%= f.img_url %>
-    </td>
-    <td>
+
       <%= f.manufacture_year %>
-    </td>
-    <td>
+
       <%= f.frame %>
-    </td>
-  </th>
-</div>
+
 
 <% end %>

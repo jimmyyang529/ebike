@@ -24,9 +24,13 @@ gem 'coffee-rails', '~> 4.2'
 #使用者認證
 gem 'devise'
 
+gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin'
 
+
 gem 'bootstrap-sass'
+
+gem "kaminari"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -36,22 +36,30 @@
 <%= form_tag bulk_compare_items_path do %>
 
   <% @items.each do |item| %>
+
     <div class="itemlist">
+<table>
+
+<tr>
       <%= link_to item_path(item) do %>
 
-        <p><%= item.name %></p>
-        <p><%= image_tag(item.img_url) %></p>
+
+      <p><%= image_tag(item.img_url) %></p>
+        <%= item.name %>
+        <strong>NT$<%= item.price %></strong>
+
 
       <% end %>
-
-      <div class="compare_box">
+</tr>
+      <!-- <div class="compare_box">
         <p><%= check_box_tag "ids[]", item.id, false %></p>
-      </div>
+      </div> -->
 
       <%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %>
 
   </div>
     <% end %>
 
-  <%= submit_tag "Compare" %>
+  <!-- <%= submit_tag "Compare" %> -->
 <% end %>
+<%= paginate @items %>

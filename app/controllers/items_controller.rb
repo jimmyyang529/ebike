@@ -9,11 +9,15 @@ class ItemsController < ApplicationController
     # end
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
 
 
 
   def index
-    @items = Item.all
+    @items = Item.page(params[:page]).per(5)
   end
 
   #POST /items/bulk_compare
@@ -21,10 +25,35 @@ class ItemsController < ApplicationController
     ids = Array( params[:ids])
     items = ids.map{ |i| Item.find_by_id(i) }.compact
     if params[:commit] == "Compare"
-      redir
+      items.each{ |e| e.update( :is_check => "true" ) }
     end
+
+    @items = Item.where(:is_check => "true")
+
+
+
   end
 
+
+  private
+
+	def item_params
+ 		params.require(:item).permit(
+ 								:name,
+                :img_url,
+                :manufacture_year,
+                :frame,
+                :fork,
+                :size,
+                :color,
+                :price,
+                :description,
+                :brand_id,
+                :category_id,
+                :is_check,
+ 								:ids => []
+ 								)
+	end
 
 
 

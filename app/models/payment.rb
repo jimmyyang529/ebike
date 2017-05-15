@@ -52,7 +52,7 @@ class Payment < ApplicationRecord
 
   def update_order_status
     if self.paid_at
-      self.order.update( :order_status => "paid" )
+      self.order.update( :payment_status => "credit_paid" )
     end
   end
 end
