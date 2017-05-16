@@ -27,6 +27,8 @@ gem 'devise'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin'
 
+gem 'rails-i18n'
+
 
 gem 'bootstrap-sass'
 

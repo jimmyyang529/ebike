@@ -1,20 +1,53 @@
-<h1>訂單編號 <%= @order.id %></h1>
+  <div class="orderitem">
+    <h1>訂單資訊</h1>
+    <h3>訂單編號： OBE商品編號 <%= @order.id %></h3>
 
+  訂單時間:<%= @order.created_at.strftime('%Y-%m-%d %H:%M')%><br>
+  收件人:<%= @order.name %><br>
+  信箱:<%= @order.email %><br>
+  電話:<%= @order.phone %><br>
+  地址:<%= @order.address %><br>
+  <br>
+  <h3>購買內容清單</h3>
 
-<p>付款方式: <%= t( @order.payment_method ) %></p>
-<p>Amount: <%= @order.amount %></p>
+<br>
+<table>
+  <tr>
+    <th>商品照片</th>
+    <th>商品名稱</th>
+    <th>生產年份</th>
+    <th>尺寸</th>
+    <th>顏色</th>
+    <th>金額</th>
+    <th>購買數量</th>
+  </tr>
+  <% @order.orderitem_ships.each do |i| %>
+  <tr>
+    <td><%= image_tag( i.item.img_url, :width => 100 ) %> </td>
+    <td><%= i.item.name %> </td>
+    <td><%= i.item.manufacture_year %> </td>
+    <td><%= i.item.size%> </td>
+    <td><%= i.item.color %> </td>
+    <td><%= i.item.price %> </td>
+    <td><%= i.quantity %></td>
+  </tr>
+  <% end %>
+</table>
 
-<% @order.orderitem_ships.each do |i| %>
-  <li><%= i.item.name %> 數量<%= i.quantity %></li>
-<% end %>
-<hr>
+  <h4>購買總金額: <%= @order.amount %></h4>
+
+<br>
 
 <% if @order.order_status == "new_order" %>
 
+<h5>請選擇以下方式進行付款</h5>
 <p>
   <% Payment::PAYMENT_METHODS.each do |pm| %>
-    <%= link_to t(pm, :scope => "PaymentPay2go"), checkout_pay2go_order_path(@order, :payment_method => pm), :class => "btn btn-primary btn-lg", :method => :post %>
+    <%= link_to t(pm, :scope => "PaymentPay2go"), checkout_pay2go_order_path(@order, :payment_method => pm), :class => "btn btn-success btn-md", :method => :post %>
   <% end %>
 </p>
 
 <% end %>
+
+
+</div>
