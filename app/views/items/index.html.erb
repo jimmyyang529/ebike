@@ -33,33 +33,34 @@
 </div>
 
 
-<%= form_tag bulk_compare_items_path do %>
-
+  <%= form_tag bulk_compare_items_path do %>
   <% @items.each do |item| %>
+  <div class="itemlist clearfix">
 
-    <div class="itemlist">
-<table>
-
-<tr>
-      <%= link_to item_path(item) do %>
-
-
-      <p><%= image_tag(item.img_url) %></p>
-        <%= item.name %>
-        <strong>NT$<%= item.price %></strong>
-
-
+  <tr>
+    <td><%= link_to item_path(item) do %></td>
+      <td><p><%= image_tag(item.img_url) %></p></td>
+      <td><p> <%= item.name %></p></td>
       <% end %>
-</tr>
-      <!-- <div class="compare_box">
-        <p><%= check_box_tag "ids[]", item.id, false %></p>
-      </div> -->
+        <td><p>出產年份: <%= item.manufacture_year %></p></td>
+        <td><p>車架: <%= item.frame %></p></td>
+        <td><p>前叉: <%= item.fork %></p></td>
+        <td><p>顏色: <%= item.color %></p></td>
+        <td><p>Size: <%= item.size %></p></td>
+        <td><p>售價:    <strong>NT$<%= item.price %></strong><p></td>
+      <div class="compare_box clearfix">
+        <td>  <p><%= check_box_tag "ids[]", item.id, false %>加入比較</p></td>
+      </div>
+      <td><%= link_to "商品詳細", item_path(item), :class => "btn btn-success" %></td>
+      <td><%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %></td>
 
-      <%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %>
-
+  </tr>
   </div>
-    <% end %>
+  <% end %>
 
-  <!-- <%= submit_tag "Compare" %> -->
-<% end %>
-<%= paginate @items %>
+  <div class="compare_btn">
+    <%= submit_tag "Compare" %><br>
+    <%= paginate @items %>
+  </div>
+
+  <% end %>

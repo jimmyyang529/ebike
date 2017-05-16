@@ -1,15 +1,16 @@
-
-
+<div class="form-group">
+<h2>新訂單資訊</h2>
+</div>
 
 <%= form_for @order do |f| %>
 
 
   <div class="form-group">
-    <%= f.label :name %>
+    <%= f.label :姓名 %>
     <%= f.text_field :name, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :phone %>
+    <%= f.label :電話 %>
     <%= f.text_field :phone, :class => "form-control" %>
   </div>
   <div class="form-group">
@@ -17,13 +18,8 @@
     <%= f.text_field :email, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= f.label :address %>
+    <%= f.label :收貨地址 %>
     <%= f.text_field :address, :class => "form-control" %>
-  </div
-
-  <div class="form-group">
-    <%= f.label :payment_method %>
-    <%= f.select :payment_method, [ ["信用卡", "credit_card"], ["ATM轉帳", "atm"]] , :class => "form-control" %>
   </div>
 
   <div class="form-group">

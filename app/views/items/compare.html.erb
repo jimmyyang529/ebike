@@ -1,0 +1,34 @@
+<session id="compare">
+  <h2>商品比較</h2>
+
+  <table>
+    <tr>
+      <th>商品照片</th>
+      <th>商品名稱</th>
+      <th>生產年份</th>
+      <th>車架</th>
+      <th>前叉</th>
+      <th>尺寸</th>
+      <th>顏色</th>
+      <th>商品特色</th>
+      <th>商品售價</th>
+
+    </tr>
+
+      <% @items.each do |f| %>
+      <tr>
+        <td> <%= image_tag(f.img_url, width:300) %></td>
+        <td> <%= f.name %> </td>
+        <td>  <%= f.manufacture_year %></td>
+        <td>  <%= f.frame %></td>
+        <td> <%= f.fork %></td>
+        <td>  <%= f.size %></td>
+        <td>  <%= f.color %></td>
+        <td>  <%= f.description %></td>
+        <td> <%= f.price %> 
+            <%= link_to "加入購物車", add_to_cart_item_path(f), :method => :post, :class => "btn btn-primary", :remote => true %></td>
+    </tr>
+<% end %>
+  </table>
+
+  </session>

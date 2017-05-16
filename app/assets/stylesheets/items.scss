@@ -1,13 +1,29 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.clearfix:after {
+.clearfix:after, .itemlist:after, .compare_box:after{
 	content:"";
 	display: table;
 	clear: both;
 }
 
 
+
+.login{
+	position: absolute;
+	margin-left:100px;
+	margin-top: 20px;
+}
+
+
+
+
+
+.login-bg img{
+	max-width:100%;
+	background-size: cover;
+	z-index:-999;
+}
 
 
 .home-banner img{
@@ -26,26 +42,104 @@
   margin-left: 450px;
 }
 
-.itemlist {
-	display: block;
-
-  margin-left:40px;
-  margin-top:20px;
-  padding:10px;
+.itemlist{
+	float: left;
+  margin:40px;
   max-width:1080px;
-	height:400px;
+	height:600px;
 }
 
 
+
+
+
 .itemlist img{
-	float:left;
 	width:450px;
 
 }
 
-.itemlist a{
+.itemlist  a{
   text-decoration-line: none;
   font-size: 20px;
-  text-align: center;
+}
 
+.itemlist strong {
+	font-size: 30px;
+	color:#E73C3C;
+}
+
+.itemshow{
+	float: left;
+  margin-left:40px;
+  margin-top:20px;
+  padding:10px;
+  max-width:1080px;
+	height:600px;
+}
+
+.itemshow tr{
+	width:900px;
+}
+
+
+
+
+.itemshow img{
+	max-width:800px;
+	float: left;
+
+}
+
+.itemshow  a{
+  text-decoration-line: none;
+  font-size: 20px;
+}
+
+.itemshow strong {
+	font-size: 30px;
+	color:#E73C3C;
+}
+
+
+#my-cart tr{
+	border: 1px solid;
+	border-color: #000000;
+}
+
+#my-cart th{
+	background-color: #C0C0C0;
+	text-align: center;
+}
+
+#my-cart td{
+	padding:5px;
+	text-align: left;
+}
+
+
+.compare_btn{
+	margin-left:40px;
+}
+
+
+#compare th{
+	background-color: #C0C0C0;
+	text-align: center;
+}
+
+
+#compare tr{
+	border:1px solid;
+	border-color: #000000;
+}
+
+#compare td{
+	padding:5px;
+	text-align: left;
+}
+
+
+.form-group{
+	margin-left: 100px;
+	width:350px;
 }
