@@ -18,7 +18,8 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.page(params[:page]).per(6)
+    @items = Item.all
+    # @items = Item.page(params[:page]).per(6)
   end
 
   #POST /items/bulk_compare

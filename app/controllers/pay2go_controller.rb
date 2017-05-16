@@ -10,11 +10,12 @@ class Pay2goController < ApplicationController
 
     @order = @payment.order
 
+
     if @payment.paid_at
      # send paid email
     end
 
-    redirect_to order_path(@order)
+    redirect_to orders_path
   end
 
   def notify

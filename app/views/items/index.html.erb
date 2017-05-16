@@ -32,7 +32,6 @@
   <%= image_tag ("home_banner_1.jpg") %>
 </div>
 
-
   <%= form_tag bulk_compare_items_path do %>
   <% @items.each do |item| %>
   <div class="itemlist clearfix">
@@ -60,7 +59,6 @@
 
   <div class="compare_btn">
     <%= submit_tag "Compare" %><br>
-    <%= paginate @items %>
   </div>
 
   <% end %>

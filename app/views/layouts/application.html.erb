@@ -23,12 +23,15 @@
 
     <ol class="breadcrumb">
       <% if current_user %>
-      <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %> |
-      <%= link_to('修改密碼', edit_registration_path(:user)) %>
+      Hi, <%= current_user.email %>
+      <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+      <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
     <% else %>
-      <%= link_to('註冊', new_registration_path(:user)) %> |
-      <%= link_to('登入', new_session_path(:user)) %>
-    <% end %></li>
+      <li><%= link_to('註冊', new_registration_path(:user)) %> </li>
+      <li><%= link_to('登入', new_session_path(:user)) %></li>
+    <% end %>
+      <li><%= link_to '首頁', items_path %></li>
+      <li><%= link_to '我的訂單', orders_path %></li>
     </ol>
 
 

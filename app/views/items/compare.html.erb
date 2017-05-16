@@ -25,7 +25,7 @@
         <td>  <%= f.size %></td>
         <td>  <%= f.color %></td>
         <td>  <%= f.description %></td>
-        <td> <%= f.price %> 
+        <td> NT$<%= f.price %>
             <%= link_to "加入購物車", add_to_cart_item_path(f), :method => :post, :class => "btn btn-primary", :remote => true %></td>
     </tr>
 <% end %>
