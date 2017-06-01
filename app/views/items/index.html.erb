@@ -9,6 +9,7 @@
       <th>數量</th>
       <th>小計</th>
     </tr>
+    
 
     <% current_cart.cart_items.each do |i| %>
 
@@ -22,8 +23,8 @@
   </table>
   <%= link_to '我要結帳!', new_order_path, :class => "btn btn-primary" %>
 
-</section>
 
+</section>
 
 
 
@@ -31,10 +32,10 @@
   <h1>Bike Your Life</h1>
   <%= image_tag ("home_banner_1.jpg") %>
 </div>
-
+<div class="clearfix">
   <%= form_tag bulk_compare_items_path do %>
   <% @items.each do |item| %>
-  <div class="itemlist clearfix">
+  <div class="itemlist">
 
   <tr>
     <td><%= link_to item_path(item) do %></td>
@@ -56,9 +57,11 @@
   </tr>
   </div>
   <% end %>
+  </div>
 
   <div class="compare_btn">
     <%= submit_tag "Compare" %><br>
   </div>
+
 
   <% end %>

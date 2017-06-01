@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   root :to => "items#index"
 
+  scope :path => '/api/v1/', :module => "api_v1", :as => 'v1', :defaults => { :format => :json } do
+    resources :items
+  end
+
   resource :cart
 
   resources :items, only: [:index, :show] do

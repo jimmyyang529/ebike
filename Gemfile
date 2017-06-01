@@ -26,7 +26,7 @@ gem 'devise'
 
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin'
-
+gem 'rails_admin-i18n'
 gem 'rails-i18n'
 
 
