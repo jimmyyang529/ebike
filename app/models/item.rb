@@ -10,12 +10,4 @@ class Item < ApplicationRecord
     self.cart_items.where(item_id: item).first
   end
 
-  def permalink
-    "#{self.name}"
-  end
-
-  def to_param
-    "#{id}-#{permalink}"
-  end
-
 end

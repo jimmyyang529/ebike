@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815040939) do
+ActiveRecord::Schema.define(version: 20170602074804) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand_name"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20170815040939) do
     t.boolean  "is_check"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "permalink"
   end
 
   create_table "orderitem_ships", force: :cascade do |t|

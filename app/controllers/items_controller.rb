@@ -53,7 +53,6 @@ class ItemsController < ApplicationController
                 :brand_id,
                 :category_id,
                 :is_check,
-                :permalink,
  								:ids => []
  								)
 	end

@@ -34,18 +34,16 @@
 </div>
 <div class="clearfix">
   <h3>依廠牌搜尋
-    <!-- <%= collection_select(:brand, :brand_id, Brand.all, :id, :brand_name) %> -->
     <% @brands.each do |brand| %>
       <%= link_to brand_items_path(brand) do %>
         <%= brand.brand_name %>
       <% end %>
     <% end %>
 
-
     依分類搜尋
     <% @categories.each do |category| %>
       <%= link_to category_items_path(category) do %>
-        <%= category.category_name %>
+        <%= category.category_name %> 
       <% end %>
     <% end %>
   </h3>
@@ -56,7 +54,7 @@
   <div class="itemlist">
 
   <tr>
-    <td><%= link_to :action => 'show', :id => item  do %></td>
+    <td><%= link_to item_path(item) do %></td>
       <td><p><%= image_tag(item.img_url) %></p></td>
       <td><p> <%= item.name %></p></td>
       <% end %>
