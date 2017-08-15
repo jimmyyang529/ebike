@@ -14,13 +14,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-
-
-
   def index
     @items = Item.all
     # @items = Item.page(params[:page]).per(6)
     @brands = Brand.all
+    @categories = Category.all
   end
 
   #POST /items/bulk_compare

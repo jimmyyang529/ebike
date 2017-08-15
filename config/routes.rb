@@ -35,6 +35,10 @@ Rails.application.routes.draw do
      resources :items, :controller => 'brand_items'
   end
 
+  resources :categories do
+     resources :items, :controller => 'category_items'
+  end
+
   namespace :admin do
     resources :items
   end

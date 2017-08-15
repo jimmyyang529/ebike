@@ -34,12 +34,19 @@
 </div>
 <div class="clearfix">
   <h3>依廠牌搜尋
-  <% @brands.each do |brand| %>
-    <%= link_to brand_items_path(brand) do %>
-      <%= brand.brand_name %> |
+    <% @brands.each do |brand| %>
+      <%= link_to brand_items_path(brand) do %>
+        <%= brand.brand_name %>
+      <% end %>
     <% end %>
-  <% end %>
-</h3>
+
+    依分類搜尋
+    <% @categories.each do |category| %>
+      <%= link_to category_items_path(category) do %>
+        <%= category.category_name %> 
+      <% end %>
+    <% end %>
+  </h3>
 
 
   <%= form_tag bulk_compare_items_path do %>
