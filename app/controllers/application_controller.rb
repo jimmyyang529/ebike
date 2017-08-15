@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
   # 注意這裡的位置是 Application Controller,
   # 由於 Cookie/Session 和瀏覽器有關,方法必須放在 controller 裡
   # 另外,在 View 裡呼叫 Controller 方法時,必須使用 helper_method
@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
 
 
 protected
+
+  def authenticate_admin
+    unless current_user.admin?
+      flash[:alert] = "Not allow!"
+      redirect_to root_path
+    end
+  end
 
   def current_cart
     @cart || set_cart

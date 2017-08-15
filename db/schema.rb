@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815040939) do
+ActiveRecord::Schema.define(version: 20170815073519) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand_name"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20170815040939) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
