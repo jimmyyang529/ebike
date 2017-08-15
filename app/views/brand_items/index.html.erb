@@ -1,0 +1,8 @@
+<h1><%= @brand.brand_name %>列表</h1>
+<% @items.each do |item| %>
+  <%= image_tag(item.img_url, :width => 250) %>
+  <%= item.name %>
+  <%= link_to 'show', brand_item_path(@brand, item) %><br>
+<% end %>
+<br>
+<%= link_to 'back to index', root_path %>

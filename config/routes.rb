@@ -31,6 +31,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :brands do
+     resources :items, :controller => 'brand_items'
+  end
+
   namespace :admin do
     resources :items
   end

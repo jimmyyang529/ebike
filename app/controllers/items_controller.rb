@@ -20,6 +20,7 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     # @items = Item.page(params[:page]).per(6)
+    @brands = Brand.all
   end
 
   #POST /items/bulk_compare

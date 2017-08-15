@@ -1,0 +1,2 @@
+class UbikesController < ApplicationController
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512061912) do
+ActiveRecord::Schema.define(version: 20170602074804) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "brand_name"
@@ -90,6 +90,15 @@ ActiveRecord::Schema.define(version: 20170512061912) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["order_id"], name: "index_payments_on_order_id"
+  end
+
+  create_table "ubikes", force: :cascade do |t|
+    t.integer  "station_number"
+    t.string   "station_name"
+    t.string   "area"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "ubike_id"
   end
 
   create_table "users", force: :cascade do |t|

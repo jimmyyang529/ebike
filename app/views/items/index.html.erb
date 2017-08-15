@@ -9,7 +9,7 @@
       <th>數量</th>
       <th>小計</th>
     </tr>
-    
+
 
     <% current_cart.cart_items.each do |i| %>
 
@@ -33,6 +33,15 @@
   <%= image_tag ("home_banner_1.jpg") %>
 </div>
 <div class="clearfix">
+  <h3>依廠牌搜尋
+  <% @brands.each do |brand| %>
+    <%= link_to brand_items_path(brand) do %>
+      <%= brand.brand_name %> |
+    <% end %>
+  <% end %>
+</h3>
+
+
   <%= form_tag bulk_compare_items_path do %>
   <% @items.each do |item| %>
   <div class="itemlist">
@@ -51,8 +60,8 @@
       <div class="compare_box clearfix">
         <td>  <p><%= check_box_tag "ids[]", item.id, false %>加入比較</p></td>
       </div>
-      <td><%= link_to "商品詳細", item_path(item), :class => "btn btn-success" %></td>
-      <td><%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %></td>
+        <td><%= link_to "商品詳細", item_path(item), :class => "btn btn-success" %></td>
+        <td><%= link_to "加入購物車", add_to_cart_item_path(item), :method => :post, :class => "btn btn-primary", :remote => true %></td>
 
   </tr>
   </div>

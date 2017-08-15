@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
-  belongs_to :category
-  belongs_to :brand
+  belongs_to :category, optional: true
+  belongs_to :brand, optional: true
 
   has_many :cart_items, dependent: :destroy
   has_many :carts, through: :cart_items

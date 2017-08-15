@@ -24,6 +24,9 @@ gem 'coffee-rails', '~> 4.2'
 #使用者認證
 gem 'devise'
 
+#接收JSON
+gem 'rest-client'
+
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'rails_admin'
 gem 'rails_admin-i18n'
