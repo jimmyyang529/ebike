@@ -18,6 +18,10 @@ protected
     end
   end
 
+  def set_item
+   @item = Item.find(params[:id])
+  end
+
   def current_cart
     @cart || set_cart
     # 如果 @cart 存在就回傳 @cart,否則呼叫 set_cart方法

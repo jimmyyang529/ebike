@@ -27,7 +27,6 @@ gem 'devise'
 #接收JSON
 gem 'rest-client'
 
-
 gem 'rails-i18n'
 
 

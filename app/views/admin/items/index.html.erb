@@ -1,0 +1,43 @@
+<session id="compare">
+<h2>Admin Items</h2>
+<%= link_to '新增單車', :controller => 'admin/items', :action => 'new', :class => "btn btn-primary" %>
+
+<table>
+  <tr>
+    <th>商品照片</th>
+    <th>商品名稱</th>
+    <th>生產年份</th>
+    <th>顏色</th>
+    <th>尺寸</th>
+    <th>商品售價</th>
+    <th>商品描述</th>
+    <th>編輯</th>
+    <th>刪除</th>
+
+
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <%= link_to item_path(item) do %>
+      <td><%= image_tag(item.img_url, width:300) %></td>
+      <td><%= item.name %></td>
+          <% end %>
+      <td><%= item.manufacture_year %></td>
+      <td><%= item.color %></td>
+      <td><%= item.size %></td>
+      <td><strong>NT$<%= item.price %></strong></td>
+      <td><%= link_to "商品詳細", admin_item_path(item), :class => "btn btn-success" %></td>
+      <td><%= link_to '編輯', :controller => 'admin/items', :action => 'edit', :id => item, :class => "btn btn-primary" %></td>
+      <td><%= link_to '刪除', admin_item_path(item),method: :delete, data:{ confirm:"Are you sure?"}, :id => item, :class => "btn btn-warning" %></td>
+
+  </tr>
+
+<% end %>
+</table>
+
+</session>
+
+
+
+<%= link_to 'Add new Bike', :controller => 'admin/items', :action => 'new' %>

@@ -1,0 +1,15 @@
+<div class="itemshow">
+  <tr>
+    <td><p><%= image_tag(@item.img_url) %></p></td>
+    <td><h2> <%= @item.name %></h2></td>
+
+    <td><p>出產年份: <%= @item.manufacture_year %></p></td>
+    <td><p>車架: <%= @item.frame %></p></td>
+    <td><p>前叉: <%= @item.fork %></p></td>
+    <td><p>顏色: <%= @item.color %></p></td>
+    <td><p>Size: <%= @item.size %></p></td>
+    <td><p>商品描述: <%= @item.description %></p></td>
+    <td><p>售價:    <strong>NT$<%= @item.price %></strong><p></td>
+
+</tr>
+</div>

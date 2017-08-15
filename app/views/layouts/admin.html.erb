@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Ebike</title>
+    <%= csrf_meta_tags %>
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert" ><%= alert %></p>
+
+    <ol class="breadcrumb">
+      <% if current_user %>
+      Hi, <%= current_user.email %>
+      <li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+      <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
+    <% else %>
+      <li><%= link_to('註冊', new_registration_path(:user)) %> </li>
+      <li><%= link_to('登入', new_session_path(:user)) %></li>
+    <% end %>
+      <li><%= link_to '首頁', items_path %></li>
+      <li><%= link_to '新增單車資料', new_admin_item_path %></li>
+    </ol>
+
+
+    <%= yield %>
+  </body>
+</html>
