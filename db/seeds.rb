@@ -20,3 +20,13 @@ brand_list =[
 brand_list.each do |brand|
   Brand.create( :brand_name => brand["brand_name"] )
 end
+
+
+# item_list =[
+# 	{"category_id"=>"1","brand_id"=>"1", "name" => "FASTROAD_FASTROAD SLR","img_url" =>"http://www.giantcyclingworld.com/backend/?p_action_name=get-file&id=20036832","manufacture_year"=>"2017","frame"=>"","fork"=>"","size"=>"","color"=>"","price"=>"","description"=""},
+#
+#
+# ]
+# item_list.each do |item|
+#   Item.create( :title => item["title"],  :due_date => item["due_date"])
+# end
