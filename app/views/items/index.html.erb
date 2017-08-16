@@ -6,7 +6,7 @@
     <tr>
       <th>商品</th>
       <th>單價</th>
-      <th>數量</th>
+      <th>數量</th>x
       <th>小計</th>
     </tr>
 
@@ -43,7 +43,7 @@
     依分類搜尋
     <% @categories.each do |category| %>
       <%= link_to category_items_path(category) do %>
-        <%= category.category_name %> 
+        <%= category.category_name %>
       <% end %>
     <% end %>
   </h3>
