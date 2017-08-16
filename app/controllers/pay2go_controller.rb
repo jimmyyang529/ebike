@@ -3,30 +3,24 @@ class Pay2goController < ApplicationController
 
   def return
     @payment = Payment.find_and_process( json_data )
-
     unless @payment.save
       flash[:alert] = "不要HACK我啦~~~"
     end
-
     @order = @payment.order
-
 
     if @payment.paid_at
      # send paid email
     end
-
     redirect_to orders_path
   end
 
   def notify
     @payment = Payment.find_and_process( json_data )
-
     if @payment.save
       render :text => "1|OK"
     else
       render :text => "0|ErrorMessage"
     end
-
   end
 
   private
