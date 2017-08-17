@@ -1,24 +1,19 @@
-# README First
+# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* 後端作品： ebike
 
-Things you may want to cover:
+* CRUD展示，商品比較功能，串接第三方金流智付寶
 
-* Ruby version
+* Clone下來後請先執行以下步驟，接著在後台新增幾筆資料即可。
 
-* System dependencies
+* 執行bundle install
 
-* Configuration
+* 執行rails db:migrate
 
-* Database creation
+* 執行rails db:seed
 
-* Database initialization
+* 後台位置 /admin/items
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* 後台登入使用帳號： admin@gmail.com ， 密碼：password
 
 * ...

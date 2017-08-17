@@ -22,11 +22,10 @@ brand_list.each do |brand|
 end
 
 
-# item_list =[
-# 	{"category_id"=>"1","brand_id"=>"1", "name" => "FASTROAD_FASTROAD SLR","img_url" =>"http://www.giantcyclingworld.com/backend/?p_action_name=get-file&id=20036832","manufacture_year"=>"2017","frame"=>"","fork"=>"","size"=>"","color"=>"","price"=>"","description"=""},
-#
-#
-# ]
-# item_list.each do |item|
-#   Item.create( :title => item["title"],  :due_date => item["due_date"])
-# end
+user_list =[
+  {"email" => "admin@gmail.com", "password" => "password", "role" => "admin"}
+]
+
+user_list.each do |user|
+  User.create( :eamil => user["email"], :password => user["password"], :role => user["role"] )
+end
